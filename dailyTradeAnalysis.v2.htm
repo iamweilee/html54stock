@@ -1,8 +1,8 @@
-<!doctype html >
+ï»¿<!doctype html >
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html;charset=GBK" />
-        <title>×Ê½ğÁ÷ÏòÅÌÖĞ·Ö¼ÛÍ³¼ÆÍ¼</title>
+        <title>èµ„é‡‘æµå‘ç›˜ä¸­åˆ†ä»·ç»Ÿè®¡å›¾</title>
     <script src="libs/util.js" type="text/javascript" charset="GBK"></script>
     <script src="libs/crossLines.js" type="text/javascript" charset="GBK"></script>
     <script src="libs/tip.js" type="text/javascript" charset="GBK"></script>
@@ -15,10 +15,10 @@
     <div id="debug"></div>
     <script type="text/javascript">
 /*
-html5ĞĞÇéÍ¼¿â
+html5è¡Œæƒ…å›¾åº“
 author:yukaizhao
 blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
-²ÎÓëÏîÄ¿»ò¼¼Êõ½»Á÷£ºyukaizhao@gmail.com
+å‚ä¸é¡¹ç›®æˆ–æŠ€æœ¯äº¤æµï¼šyukaizhao@gmail.com
 */
         //http://vol.stock.hexun.com/charts/now/share/PriceAmount.ashx?code=600036
         //http://vol.stock.hexun.com/Now/share/PriceAmount.shtml?rank=3&code=600036
@@ -26,14 +26,14 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
         * canvasId: canvasId
         * options:{
             titleOptions:{position:{x:1,y:1},fontColor:'black',font:'12px Bold Arial'},
-            priceUnitOptions:{position:{x:20,y:15},fontColor:'black',font:'11px Arial',text:'(Ôª)'},
-            flowInInstructionOptions :{position:{x:60,y:30},color:'red',text:'Á÷ÈëĞÔ×Ê½ğ',font:'11px Arial',fontColor:'black'},
-            flowOutInstructionOptions:{position:{x:120,y:30},color:'red',text:'Á÷³öĞÔ×Ê½ğ',font:'11px Arial',fontColor:'black'},
+            priceUnitOptions:{position:{x:20,y:15},fontColor:'black',font:'11px Arial',text:'(å…ƒ)'},
+            flowInInstructionOptions :{position:{x:60,y:30},color:'red',text:'æµå…¥æ€§èµ„é‡‘',font:'11px Arial',fontColor:'black'},
+            flowOutInstructionOptions:{position:{x:120,y:30},color:'red',text:'æµå‡ºæ€§èµ„é‡‘',font:'11px Arial',fontColor:'black'},
             chartOptions:{position:{x:50,y:50},width:300,itemHeight:18,borderColor:'gray',lineColor:'gray',minHeight:200},
-            //³É½»µ¥Î»Ñ¡Ïî
+            //æˆäº¤å•ä½é€‰é¡¹
             dealUnitOptions:{color:'red',font:'11px Arial',fontColor:'black',height:20}
         }
-        * data : {title:'ÕĞÉÌÒøĞĞ(600036)ÈÕ³É½»·ÖÎö',unit:'ÍòÔª',items:[{priceRanges:{begin:11.95,to:11.96},flowIn:354.23,flowOut:18.64}]};
+        * data : {title:'æ‹›å•†é“¶è¡Œ(600036)æ—¥æˆäº¤åˆ†æ',unit:'ä¸‡å…ƒ',items:[{priceRanges:{begin:11.95,to:11.96},flowIn:354.23,flowOut:18.64}]};
         *
         */
         function moneyFlowAnalysisPainter(canvasId, options, data) {
@@ -56,21 +56,21 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                 ctx.fillText(ops.text, ops.position.x, ops.position.y);
             }
 
-            //»­±êÌâ
+            //ç”»æ ‡é¢˜
             if (options.titleOptions) {
                 var to = options.titleOptions;
                 to.text = data.title;
                 drawText(to);
             }
 
-            //»­¼Û¸ñµ¥Î»
-            //priceUnitOptions:{position:{x:20,y:15},fontColor:'black',font:'11px Arial',text:'(Ôª)'},
+            //ç”»ä»·æ ¼å•ä½
+            //priceUnitOptions:{position:{x:20,y:15},fontColor:'black',font:'11px Arial',text:'(å…ƒ)'},
             if (options.priceUnitOptions) {
                 drawText(options.priceUnitOptions);
             }
             /*
-            flowInInstructionOptions :{position:{x:60,y:30},color:'red',text:'Á÷ÈëĞÔ×Ê½ğ',font:'11px Arial',fontColor:'black'},
-            flowOutInstructionOptions:{position:{x:120,y:30},color:'red',text:'Á÷³öĞÔ×Ê½ğ',font:'11px Arial',fontColor:'black'},
+            flowInInstructionOptions :{position:{x:60,y:30},color:'red',text:'æµå…¥æ€§èµ„é‡‘',font:'11px Arial',fontColor:'black'},
+            flowOutInstructionOptions:{position:{x:120,y:30},color:'red',text:'æµå‡ºæ€§èµ„é‡‘',font:'11px Arial',fontColor:'black'},
             */
             if (options.flowInInstructionOptions) {
                 var op = options.flowInInstructionOptions;
@@ -94,7 +94,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                 op.position = { x: op.position.x + op.fontOffset.left + op.rectSize, y: op.position.y + op.fontOffset.top };
                 drawText(op);
             }
-            //»­Ö÷Í¼Çø
+            //ç”»ä¸»å›¾åŒº
             ctx.beginPath();
             ctx.lineWidth = 1;
             ctx.rect(chartOptions.position.x, chartOptions.position.y,chartOptions.width,chartOptions.height);
@@ -102,7 +102,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
             ctx.closePath();
             ctx.stroke();
 
-            //»­Ïß
+            //ç”»çº¿
             ctx.lineWidth = 1;
             var lineCount = chartOptions.height / (chartOptions.itemHeight*2);
             for (var i=1;i<lineCount ;i++) {
@@ -123,7 +123,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                 ctx.closePath();
                 ctx.fill();
             }
-            //»­ÏßÍê±Ï
+            //ç”»çº¿å®Œæ¯•
 
             var items = data.items;
             var max = 0;
@@ -135,7 +135,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
             var flowInColor = options.flowInInstructionOptions.color;
             var flowOutColor = options.flowOutInstructionOptions.color;
 
-            //µ×²¿³É½»¶î×ø±ê
+            //åº•éƒ¨æˆäº¤é¢åæ ‡
             var txt = '0.00';
             var top = chartOptions.height + chartOptions.position.y + 2;
             ctx.fillStyle = 'black';
@@ -165,14 +165,14 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                 var outLength = chartOptions.width / 2 * item.flowOut / max;
                 var y = getY(i);
 
-                //×Ê½ğÁ÷³ö
+                //èµ„é‡‘æµå‡º
                 ctx.fillStyle = flowInColor;
                 ctx.beginPath();
                 ctx.rect(chartOptions.position.x + chartOptions.width / 2, y, inLength, chartOptions.barHeight);
                 ctx.closePath();
                 ctx.fill();
 
-                //×Ê½ğÁ÷Èë
+                //èµ„é‡‘æµå…¥
                 ctx.fillStyle = flowOutColor ;
                 ctx.beginPath();
                 ctx.rect(chartOptions.position.x + chartOptions.width / 2 - outLength, y, outLength, chartOptions.barHeight);
@@ -180,7 +180,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                 ctx.fill();
 
                 if (i % 2 == 0) {
-                    //×ó²à¼Û¸ñ
+                    //å·¦ä¾§ä»·æ ¼
                     var price = new Number(item.priceRanges.to).toFixed(2);
                     ctx.font = chartOptions.priceScalerTextFont;
                     var priceWidth = ctx.measureText(price).width;
@@ -211,15 +211,15 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                             var dataItem = items[dataIndex]
 
                             var flowInGreatThanOut = Math.abs(dataItem.flowIn) > Math.abs(dataItem.flowOut);
-                            return '¼Û¸ñÇø¼ä£º' + dataItem.priceRanges.begin + ' - ' + dataItem.priceRanges.to + '(Ôª)'
-                                + '<br/>Á÷Èë×Ê½ğ£º<font color="' + flowInColor + '">' + dataItem.flowIn + '(' + data.unit + ')</font>'
-                                + '<br/>Á÷³ö×Ê½ğ£º<font color="' + flowOutColor + '">' + dataItem.flowOut + '(' + data.unit + ')</font>'
-                                + '<br/>²î¡¡¡¡Öµ£º<font color="' + (flowInGreatThanOut ? flowInColor : flowOutColor) + '">'
+                            return 'ä»·æ ¼åŒºé—´ï¼š' + dataItem.priceRanges.begin + ' - ' + dataItem.priceRanges.to + '(å…ƒ)'
+                                + '<br/>æµå…¥èµ„é‡‘ï¼š<font color="' + flowInColor + '">' + dataItem.flowIn + '(' + data.unit + ')</font>'
+                                + '<br/>æµå‡ºèµ„é‡‘ï¼š<font color="' + flowOutColor + '">' + dataItem.flowOut + '(' + data.unit + ')</font>'
+                                + '<br/>å·®ã€€ã€€å€¼ï¼š<font color="' + (flowInGreatThanOut ? flowInColor : flowOutColor) + '">'
                                 + (Math.abs(dataItem.flowIn) - Math.abs(dataItem.flowOut)).toFixed(2)
                                 + '</font>';
                         }
                     },
-                    position: { x: chartOptions.position.x + chartOptions.width/6, y: false }, //positionÖĞµÄÖµÊÇÏà¶ÔÓÚcanvasµÄ×óÉÏ½ÇµÄ
+                    position: { x: chartOptions.position.x + chartOptions.width/6, y: false }, //positionä¸­çš„å€¼æ˜¯ç›¸å¯¹äºcanvasçš„å·¦ä¸Šè§’çš„
                     size: { width: 165, height: 100 },
                     opacity: 80,
                     cssClass: null,
@@ -231,7 +231,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
             });
         }
 
-        //ÔØÈëÊı¾İµ÷ÓÃPainter»­Í¼
+        //è½½å…¥æ•°æ®è°ƒç”¨Painterç”»å›¾
         Ajax.get('dailyTradeAnalysis.xml',
             function (client) {
                 if (client.readyState == 4 && (client.status == 200 || client.status == 304)) {
@@ -253,13 +253,13 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                     var painter = new moneyFlowAnalysisPainter('canvas',
                         {
                             titleOptions: { position: { x: 10, y: 20 }, fontColor: 'black', font: 'Bold 12px Arial' },
-                            priceUnitOptions: { position: { x: 24, y: 38 }, fontColor: 'black', font: '11px Arial', text: '(Ôª)' },
-                            flowInInstructionOptions: { position: { x: 180, y: 33 }, color: 'red', text: 'Á÷ÈëĞÔ×Ê½ğ', font: '11px Arial', fontColor: 'black', rectSize: 12, textBaseline: 'top', fontOffset: {left:2,top:-2} },
-                            flowOutInstructionOptions: { position: { x: 280, y: 33 }, color: 'green', text: 'Á÷³öĞÔ×Ê½ğ', font: '11px Arial', fontColor: 'black', rectSize: 12, textBaseline: 'top', fontOffset: { left: 2, top: -2} },
+                            priceUnitOptions: { position: { x: 24, y: 38 }, fontColor: 'black', font: '11px Arial', text: '(å…ƒ)' },
+                            flowInInstructionOptions: { position: { x: 180, y: 33 }, color: 'red', text: 'æµå…¥æ€§èµ„é‡‘', font: '11px Arial', fontColor: 'black', rectSize: 12, textBaseline: 'top', fontOffset: {left:2,top:-2} },
+                            flowOutInstructionOptions: { position: { x: 280, y: 33 }, color: 'green', text: 'æµå‡ºæ€§èµ„é‡‘', font: '11px Arial', fontColor: 'black', rectSize: 12, textBaseline: 'top', fontOffset: { left: 2, top: -2} },
                             chartOptions: { position: { x: 50, y: 50 }, width: 330, itemHeight: 9, barHeight: 5, barSpace: 4, borderColor: 'gray', lineColor: 'gray', minHeight: 200,
                                 priceScalerTextFont: '11px Arial', priceScalerFontHeight: 11, priceScalerColor: 'black', priceScalerOffset: { right: -4, top: 2 }, priceScalerTextBaseline: 'alphabetic'
                             },
-                            //³É½»µ¥Î»Ñ¡Ïî
+                            //æˆäº¤å•ä½é€‰é¡¹
                             dealUnitOptions: { color: 'red', font: '11px Arial', fontColor: 'black', height: 30 }
                         },
                         { title: title, unit: unit, items: items }
@@ -272,10 +272,10 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
     <style>
     pre{padding: 60px 0 0 30px;color: gray;font-size: .8em;line-height: 20px;}
     </style>
-    <p><a href="./index.html">·µ»ØÁĞ±íÒ³</a></p>
+    <p><a href="./index.html">è¿”å›åˆ—è¡¨é¡µ</a></p>
     <pre>
 Author:yukaizhao http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
-²ÎÓëÏîÄ¿»ò¼¼Êõ½»Á÷£º<a href="mailto:yukaizhao@gmail.com">yukaizhao@gmail.com</a>
+å‚ä¸é¡¹ç›®æˆ–æŠ€æœ¯äº¤æµï¼š<a href="mailto:yukaizhao@gmail.com">yukaizhao@gmail.com</a>
     </pre>
     </body>
 </html>

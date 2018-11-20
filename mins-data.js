@@ -1,4 +1,4 @@
-
+﻿
         function getQuote() {
             return {
                 quote: {

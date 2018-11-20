@@ -1,4 +1,4 @@
-<!doctype html />
+ï»¿<!doctype html />
 <html>
 <head>
     <title>touch</title>
@@ -36,7 +36,7 @@
                     var finger = touchToFinger(touch);
                     fingers.push(finger);
                 }
-                //¼ÆËãÁ½¸ötouchµãÖ®¼äµÄ¾àÀë
+                //è®¡ç®—ä¸¤ä¸ªtouchç‚¹ä¹‹é—´çš„è·ç¦»
                 for (var i = 0; i < fingers.length; i++) {
                     var fingerI = fingers[i];
                     if(i == fingers.length-1)break;
@@ -68,7 +68,7 @@
                 //setDebugMsg(h);
                 var target = getTarget(e);
                 var fingers = getTouchFingers(e);
-                //¼ÆËã¸÷¸öÊÖÖ¸µÄÒÆ¶¯ËÙ¶ÈºÍ¼ÓËÙ¶È
+                //è®¡ç®—å„ä¸ªæ‰‹æŒ‡çš„ç§»åŠ¨é€Ÿåº¦å’ŒåŠ é€Ÿåº¦
                 var oldFingers = target.fingers;
                 var continueExec = (fingers && fingers.length && oldFingers && oldFingers.length);
                 setDebugMsg('continueExec is ' + continueExec);
@@ -86,7 +86,7 @@
                     }
                     setDebugMsg('fingerOld is ' + fingerOld);
                     if (fingerOld) {
-                        //¼ÆËãx·½ÏòËÙ¶È
+                        //è®¡ç®—xæ–¹å‘é€Ÿåº¦
                         var timeSpan = (fingerNew.touchTime.getTime() - fingerOld.touchTime.getTime())*.001;
                         var xNew = fingerNew.pageX;
                         var xOld = fingerOld.pageX;

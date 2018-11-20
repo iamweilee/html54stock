@@ -1,8 +1,8 @@
-<!doctype html>
+ï»¿<!doctype html>
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html;charset=GBK" />
-    <title>³É½»½ğ¶î·ÖÎö</title>
+    <title>æˆäº¤é‡‘é¢åˆ†æ</title>
     <script src="libs/ajax.js" type="text/javascript"></script>
     <script src="libs/xmlparser.js" type="text/javascript"></script>
     <script src="libs/loading.js" type="text/javascript"></script>
@@ -20,20 +20,20 @@
     </canvas>
     <script type="text/javascript">
 /*
-html5ĞĞÇéÍ¼¿â
+html5è¡Œæƒ…å›¾åº“
 author:yukaizhao
 blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
-²ÎÓëÏîÄ¿»ò¼¼Êõ½»Á÷£ºyukaizhao@gmail.com
+å‚ä¸é¡¹ç›®æˆ–æŠ€æœ¯äº¤æµï¼šyukaizhao@gmail.com
 */
         //http://vol.stock.hexun.com/Charts/Now/Share/info1.ashx?code=600036
         //http://vol.stock.hexun.com/600036.shtm
         /**
         data format:
         var data = {
-        title:'ÕĞÉÌÒøĞĞ(600036)³É½»½ğ¶î·ÖÎö',
-        stock:'ÕĞÉÌÒøĞĞ',
+        title:'æ‹›å•†é“¶è¡Œ(600036)æˆäº¤é‡‘é¢åˆ†æ',
+        stock:'æ‹›å•†é“¶è¡Œ',
         preClose:11.70,
-        flowUnit:'ÍòÔª',
+        flowUnit:'ä¸‡å…ƒ',
         items: [{ time: '09:30', price: 11.64, flowIn: 49.27, flowOut: 10.87}]
         };*/
         var canvasId = 'canvas';
@@ -43,9 +43,9 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
             bar: { width: 1, flowInColor: 'red', flowOutColor: 'green' },
             priceLineColor: '#6699cc',
             priceColors:{rise:'red',fall:'green',normal:'black'},
-            titleOptions:{font:'Bold 11px ËÎÌå',position:{x:15,y:5},color:'black',textBaseline:'top'},
-            flowUnitOptions:{font:'11px ËÎÌå',position:{x:30,y:28},color:'black',textBaseline:'top'},
-            stockNameOptions:{font:'11px ËÎÌå',position:{x:400,y:28},color:'black',textBaseline:'top'},
+            titleOptions:{font:'Bold 11px å®‹ä½“',position:{x:15,y:5},color:'black',textBaseline:'top'},
+            flowUnitOptions:{font:'11px å®‹ä½“',position:{x:30,y:28},color:'black',textBaseline:'top'},
+            stockNameOptions:{font:'11px å®‹ä½“',position:{x:400,y:28},color:'black',textBaseline:'top'},
             xAxis: { font: '11px Arial', region: { x: 60, y: 373, height: 30, width: 400 }, color: 'black',textBaseline:'top' },
             yAxisFlow: { font: '11px Arial', region: { x: 0, y: 47, height: 320, width: 55}, color: 'black',align:'right' ,fontHeight:8,textBaseline:'top'},
             yAxisPrice: { font: '11px Arial', region: { x: 462, y: 47, height: 320, width: 48}, color: 'black',align:'left' ,fontHeight:8,textBaseline:'top'}
@@ -54,7 +54,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
         
         var implementFlowInOut = {
             start: function () {
-                //»­¿òºÍÏß
+                //ç”»æ¡†å’Œçº¿
                 var ctx = this.ctx;
                 var region = options.region;
                 ctx.beginPath();
@@ -75,10 +75,10 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                 fillText('('+this.data.flowUnit+')',options.flowUnitOptions);
                 fillText(this.data.stock,options.stockNameOptions);
                 ctx.save();
-                //×ª»»×ø±ê
+                //è½¬æ¢åæ ‡
                 ctx.translate(region.x, region.y + region.height / 2);
 
-                //»­Ïß
+                //ç”»çº¿
                 var hlines = [0, region.height / 6, region.height * 2 / 6, 0 - region.height / 6, 0 - region.height * 2 / 6];
                 var me = this;
                 hlines.each(function (i) {
@@ -92,7 +92,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
 
                 //this.drawHLine(options.region.borderColor, 0, 0, region.width);
 
-                //»ñµÃ×î´óÖµ
+                //è·å¾—æœ€å¤§å€¼
                 maxFlow = 0;
                 this.data.items.each(function (item) {
                     var maxI = Math.max(item.flowIn, item.flowOut);
@@ -179,13 +179,13 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                 maxDotsCount: options.minsCount,
                 getDataLength: function () { return this.data.items.length; },
                 getItemValue: function (item) { return item.price; },
-                middleValue: parseFloat(data.preClose), //Í¨³£ÊÇ×òÊÕ
+                middleValue: parseFloat(data.preClose), //é€šå¸¸æ˜¯æ˜¨æ”¶
                 lineColor:options.priceLineColor
             });
             var paintPrice = new Painter(canvasId, priceLinePainter, data);
             paintPrice.paint();
 
-            //¼Û¸ñ×ø±êÖá
+            //ä»·æ ¼åæ ‡è½´
             var preClose = parseFloat(data.preClose);
             var canvas = $id(canvasId);
             function getIndexByX(x) {
@@ -210,15 +210,15 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                         if (dataIndex >= 0 && dataIndex < items.length) {
                             var dataItem = items[dataIndex]
                             //{ time: '09:30', price: 11.64, flowIn: 49.27, flowOut: 10.87}
-                            return 'Ê±¡¡¡¡¼ä£º' + dataItem.time
-                                + '<br/>Á÷Èë×Ê½ğ£º<font color="' + options.priceColors.rise + '">' + dataItem.flowIn + '(' + data.flowUnit + ')</font>'
-                                + '<br/>Á÷³ö×Ê½ğ£º<font color="' + options.priceColors.fall + '">' + dataItem.flowOut + '(' + data.flowUnit + ')</font>'
-                                + '<br/>¼Û¡¡¡¡¸ñ£º<font color="' + (dataItem.price > preClose ? options.priceColors.rise : options.priceColors.fall) + '">'
+                            return 'æ—¶ã€€ã€€é—´ï¼š' + dataItem.time
+                                + '<br/>æµå…¥èµ„é‡‘ï¼š<font color="' + options.priceColors.rise + '">' + dataItem.flowIn + '(' + data.flowUnit + ')</font>'
+                                + '<br/>æµå‡ºèµ„é‡‘ï¼š<font color="' + options.priceColors.fall + '">' + dataItem.flowOut + '(' + data.flowUnit + ')</font>'
+                                + '<br/>ä»·ã€€ã€€æ ¼ï¼š<font color="' + (dataItem.price > preClose ? options.priceColors.rise : options.priceColors.fall) + '">'
                                 + parseFloat(dataItem.price).toFixed(2)
                                 + '</font>';
                         }
                     },
-                    position: { x: false, y: options.region.y + options.region.height / 5 }, //positionÖĞµÄÖµÊÇÏà¶ÔÓÚcanvasµÄ×óÉÏ½ÇµÄ
+                    position: { x: false, y: options.region.y + options.region.height / 5 }, //positionä¸­çš„å€¼æ˜¯ç›¸å¯¹äºcanvasçš„å·¦ä¸Šè§’çš„
                     size: { width: 150, height: 80 },
                     opacity: 80,
                     cssClass: null,
@@ -229,7 +229,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                 }
             });
 
-            //Ê±¼äÖá
+            //æ—¶é—´è½´
             var xAxisImple = new xAxis(options.xAxis);
             var xAxisPainter = new Painter(canvasId, xAxisImple, ['09:30', '10:30', '11:00/13:00', '14:00', '15:00']);
             xAxisPainter.options = xAxisImple.options;
@@ -244,7 +244,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
             scalers.push('-' + (painterFlow.maxFlow * 2 / 3).toFixed(2));
             scalers.push('-' + painterFlow.maxFlow.toFixed(2));
 
-            //×Ê½ğÁ÷Ïò×ø±êÖá
+            //èµ„é‡‘æµå‘åæ ‡è½´
             var flowScalerImpl = new yAxis(options.yAxisFlow);
             var yAxisPainterFlow = new Painter(canvasId, flowScalerImpl, scalers);
             yAxisPainterFlow.scalerOptions = options.yAxisFlow;
@@ -272,10 +272,10 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
     <style>
     pre{padding: 60px 0 0 30px;color: gray;font-size: .8em;line-height: 20px;}
     </style>
-    <p><a href="./index.html">·µ»ØÁĞ±íÒ³</a></p>
+    <p><a href="./index.html">è¿”å›åˆ—è¡¨é¡µ</a></p>
     <pre>
 Author:yukaizhao http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
-²ÎÓëÏîÄ¿»ò¼¼Êõ½»Á÷£º<a href="mailto:yukaizhao@gmail.com">yukaizhao@gmail.com</a>
+å‚ä¸é¡¹ç›®æˆ–æŠ€æœ¯äº¤æµï¼š<a href="mailto:yukaizhao@gmail.com">yukaizhao@gmail.com</a>
     </pre>
 </body>
 </html>

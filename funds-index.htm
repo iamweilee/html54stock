@@ -1,8 +1,8 @@
-<!doctype html >
+ï»¿<!doctype html >
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html;charset=GBK" />
-        <title>»ù½ğµ¥Î»¾»ÖµÖ¸Êı¶Ô±ÈÍ¼</title>
+        <title>åŸºé‡‘å•ä½å‡€å€¼æŒ‡æ•°å¯¹æ¯”å›¾</title>
         <script src="libs/util.js"></script>
         <script src="libs/loading.js"></script>
         <script src="libs/ajax.js"></script>
@@ -12,10 +12,10 @@
         <script src="libs/chartEventHelper.js"></script>
         <script type="text/javascript">
 /*
-html5ĞĞÇéÍ¼¿â
+html5è¡Œæƒ…å›¾åº“
 author:yukaizhao
 blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
-²ÎÓëÏîÄ¿»ò¼¼Êõ½»Á÷£ºyukaizhao@gmail.com
+å‚ä¸é¡¹ç›®æˆ–æŠ€æœ¯äº¤æµï¼šyukaizhao@gmail.com
 */
             function Tip(options) {
                 this.options = options;
@@ -56,7 +56,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                 paintTitle: function (dataItem) {
                     var dc = this.dataContext;
                     dataItem = dataItem || dc.dataItems[dc.dataItems.length - 1];
-                    var txt = '×îĞÂ' + toMoney(dataItem.unitNetValue);
+                    var txt = 'æœ€æ–°' + toMoney(dataItem.unitNetValue);
                     var ctx = this.ctx;
                     var options = this.titleOptions;
                     var region = options.region;
@@ -72,7 +72,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                     var isEqual = price == dc.firstValue;
                     var isFall = price < dc.firstValue;
                     var diff = toMoney(price - dc.firstValue);
-                    var txtRiseFall = (isRise ? '¡ü' : (isFall ? '¡ı' : '')) + diff
+                    var txtRiseFall = (isRise ? 'â†‘' : (isFall ? 'â†“' : '')) + diff
             + ('(')
             + toMoney(diff * 100 / dc.firstValue)
             + '%)';
@@ -89,7 +89,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                 paintLegend: function () {
                     /*
                     legendOptions:
-                    { region: {x:1.5,y:140,height:16,width:153}, fontColor:'black',font:'9pt ËÎÌå' ,barHeight:6px,barWidth:12}
+                    { region: {x:1.5,y:140,height:16,width:153}, fontColor:'black',font:'9pt å®‹ä½“' ,barHeight:6px,barWidth:12}
                     */
                     var options = this.legendOptions;
                     var ctx = this.ctx;
@@ -106,9 +106,9 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                     ctx.font = options.font;
                     ctx.textAlign = 'left';
                     ctx.textBaseline = 'bottom';
-                    ctx.fillText('µ¥Î»¾»Öµ', fontX, fontY);
+                    ctx.fillText('å•ä½å‡€å€¼', fontX, fontY);
 
-                    var txt = 'ÉÏÖ¤Ö¸Êı';
+                    var txt = 'ä¸Šè¯æŒ‡æ•°';
                     var fontWidth = ctx.measureText(txt).width;
 
                     fontX = region.x + region.width - fontWidth;
@@ -353,7 +353,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                         return region.x + (region.width * index / (count - 1));
                     }
 
-                    //Ìí¼ÓÊó±êÊÂ¼ş
+                    //æ·»åŠ é¼ æ ‡äº‹ä»¶
                     addCrossLinesAndTipEvents(canvas, {
                         getCrossPoint: function (ev) { var x = getX(ev.offsetX); var y = getY(ev.offsetX); /*setDebugMsg('crossPoint:x=' + x+',y='+y);*/return { x: x, y: y }; },
                         triggerEventRanges: { x: region.x, y: region.y, width: region.width - 1, height: region.height },
@@ -401,17 +401,17 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
                         painter = new FundIndex('canvasFund', {
                             riseColor: 'red', fallColor: 'green', normalColor: 'black',
                             dataUrl: 'openfundnetvalue.xml', openUrl: 'http://jingzhi.funds.hexun.com/160808.shtml',
-                            titleOptions: { region: { x: 2, y: 2, width: 212, height: 16 }, font: '9pt ËÎÌå' },
+                            titleOptions: { region: { x: 2, y: 2, width: 212, height: 16 }, font: '9pt å®‹ä½“' },
                             chartOptions: {
                                 region: { x: 2.5, y: 18.5, width: 155, height: 90 },
                                 borderColor: 'black',
-                                font: '9pt ËÎÌå', fontColor: 'gray',
+                                font: '9pt å®‹ä½“', fontColor: 'gray',
                                 splitLine: { spaceCount: 4, color: 'lightgray', referenceColor: 'red' },
                                 fundLineColor: '#E2007E',
                                 indexLineColor: '#2358A6'
                             },
                             dateAxisOptions: { region: { x: 1.5, y: 123, height: 16, width: 153 }, color: 'gray', font: '7pt Arial' },
-                            legendOptions: { region: {x:1.5,y:129,height:12,width:153}, fontColor:'black',font:'9pt ËÎÌå',barHeight:5,barWidth:16,spaceBetweenBarAndText:2 },
+                            legendOptions: { region: {x:1.5,y:129,height:12,width:153}, fontColor:'black',font:'9pt å®‹ä½“',barHeight:5,barWidth:16,spaceBetweenBarAndText:2 },
                             linksOptions:{region:{x:158,y:16,height:120,width:56}}
                         });
                     }
@@ -421,7 +421,7 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
         </script>
     <style type="text/css">
         .menu{display:none}
-        .menuItem{border: 1px solid #666;color: #666;display: block;font-size: 9pt;font-family: Arial,ËÎÌå;margin: 2px;text-decoration: none;line-height: 16px;text-align: center;}
+        .menuItem{border: 1px solid #666;color: #666;display: block;font-size: 9pt;font-family: Arial,å®‹ä½“;margin: 2px;text-decoration: none;line-height: 16px;text-align: center;}
         .focus{background: #FFCC66;}
     </style>
     </head>
@@ -429,11 +429,11 @@ blog:http://www.cnblogs.com/yukaizhao/ http://weibo.com/yukaizhao/
     <body>
         <canvas id="canvasFund" width="214" height="146"></canvas>
         <div id="canvasFund_links" class="menu">
-            <a href="http://jingzhi.funds.hexun.com/jz/" target="_blank" class="menuItem">»ù½ğ¾»Öµ</a>
-            <a href="http://paiming.funds.hexun.com/cc/zcgtj.htm" target="_blank" class="menuItem">ÖØ²Ö¹É</a>
-            <a href="http://funds.hexun.com/2009/jjsxq/index.html" target="_blank" class="menuItem">É¸Ñ¡Æ÷</a>
-            <a href="http://bbs.hexun.com/funds/board_30_all_1_d.aspx" target="_blank" class="menuItem">»ù½ğÂÛÌ³</a>
-            <a href="http://funds.hexun.com/money/" target="_blank" class="menuItem">»ù½ğ¿ÎÌÃ</a>
+            <a href="http://jingzhi.funds.hexun.com/jz/" target="_blank" class="menuItem">åŸºé‡‘å‡€å€¼</a>
+            <a href="http://paiming.funds.hexun.com/cc/zcgtj.htm" target="_blank" class="menuItem">é‡ä»“è‚¡</a>
+            <a href="http://funds.hexun.com/2009/jjsxq/index.html" target="_blank" class="menuItem">ç­›é€‰å™¨</a>
+            <a href="http://bbs.hexun.com/funds/board_30_all_1_d.aspx" target="_blank" class="menuItem">åŸºé‡‘è®ºå›</a>
+            <a href="http://funds.hexun.com/money/" target="_blank" class="menuItem">åŸºé‡‘è¯¾å ‚</a>
         </div>
     </body>
 </html>
