@@ -1,12 +1,12 @@
 /*
-html5ĞĞÇéÍ¼¿â
+html5è¡Œæƒ…å›¾åº“
 author:yukaizhao
 blog:http://www.cnblogs.com/yukaizhao/
-ÉÌÒµ»ò¹«¿ª·¢²¼ÇëÁªÏµ£ºyukaizhao@gmail.com
+å•†ä¸šæˆ–å…¬å¼€å‘å¸ƒè¯·è”ç³»ï¼šyukaizhao@gmail.com
 */
-/*Ê¹ÓÃ´ËÎÄ¼şĞèÒªÒıÓÃutil.jsºÍcrossLineÒÔ¼°tip*/
+/*ä½¿ç”¨æ­¤æ–‡ä»¶éœ€è¦å¼•ç”¨util.jså’ŒcrossLineä»¥åŠtip*/
 /*
-    canvas: Ìí¼ÓÊÂ¼şµÄ»­²¼
+    canvas: æ·»åŠ äº‹ä»¶çš„ç”»å¸ƒ
     options: {
         getCrossPoint:function (ev){return {x:x,y:y};},
         triggerEventRanges:{},
@@ -64,7 +64,7 @@ crossLinesAndTipMgr.prototype._onMouseOrTouchMove = function (ev) {
     var canvasPosition = getPageCoord(canvas);
     var range = options.triggerEventRanges;
 
-    //ÅĞ¶ÏÊÇ·ñÔÚ·¶Î§Ö®ÄÚ£¬Èç¹û²»ÔÚ·¶Î§Ö®ÄÚÔòÒÆÈ¥Ê®×ÖÏßºÍtip
+    //åˆ¤æ–­æ˜¯å¦åœ¨èŒƒå›´ä¹‹å†…ï¼Œå¦‚æœä¸åœ¨èŒƒå›´ä¹‹å†…åˆ™ç§»å»åå­—çº¿å’Œtip
     if (ev.offsetX < range.x || ev.offsetX > range.x + range.width
             || ev.offsetY < range.y || ev.offsetY > range.y + range.height) {
         me._removeTipAndCrossLines();
@@ -72,7 +72,7 @@ crossLinesAndTipMgr.prototype._onMouseOrTouchMove = function (ev) {
     }
 
     var crossPoint = options.getCrossPoint(ev);
-    //Ìí¼ÓÊó±êºÍ´¥ÃşEvent
+    //æ·»åŠ é¼ æ ‡å’Œè§¦æ‘¸Event
     var crossLinesOptions = {
         crossPoint: crossPoint,
         verticalRange: { y1: range.y, y2: range.y + range.height },
@@ -110,9 +110,9 @@ crossLinesAndTipMgr.prototype._onMouseOrTouchMove = function (ev) {
     if (options.tipOptions) {
         var tipOp = options.tipOptions;
         if (!me.tip) {
-            //tipÉèÖÃ
+            //tipè®¾ç½®
             var tip = new Tip({
-                position: { x: tipOp.position.x || false, y: tipOp.position.y || false }, //positionÖĞµÄÖµÊÇÏà¶ÔÓÚcanvasµÄ×óÉÏ½ÇµÄ
+                position: { x: tipOp.position.x || false, y: tipOp.position.y || false }, //positionä¸­çš„å€¼æ˜¯ç›¸å¯¹äºcanvasçš„å·¦ä¸Šè§’çš„
                 size: tipOp.size,
                 opacity: tipOp.opacity || 80,
                 cssClass: tipOp.cssClass,
@@ -167,7 +167,7 @@ crossLinesAndTipMgr.prototype._mouseout = function (ev) {
     ev = getOffset(e);
     var me = this;
     var range = me.options.triggerEventRanges;
-    //ÅĞ¶ÏÊÇ·ñÔÚ·¶Î§Ö®ÄÚ£¬Èç¹û²»ÔÚ·¶Î§Ö®ÄÚÔòÒÆÈ¥Ê®×ÖÏßºÍtip
+    //åˆ¤æ–­æ˜¯å¦åœ¨èŒƒå›´ä¹‹å†…ï¼Œå¦‚æœä¸åœ¨èŒƒå›´ä¹‹å†…åˆ™ç§»å»åå­—çº¿å’Œtip
     if (ev.offsetX <= range.x || ev.offsetX >= range.x + range.width
             || ev.offsetY <= range.y || ev.offsetY >= range.y + range.height) {
         me._removeTipAndCrossLines();

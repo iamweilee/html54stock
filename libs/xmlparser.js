@@ -1,8 +1,8 @@
 /*
-html5行情图库
+html5琛屾儏鍥惧簱
 author:yukaizhao
 blog:http://www.cnblogs.com/yukaizhao/
-商业或公开发布请联系：yukaizhao@gmail.com
+鍟嗕笟鎴栧叕寮�鍙戝竷璇疯仈绯伙細yukaizhao@gmail.com
 */
 function XmlParser(doc) { this.doc = doc; }
 

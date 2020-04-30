@@ -1,11 +1,11 @@
 /*
-html5行情图库
+html5琛屾儏鍥惧簱
 author:yukaizhao
 blog:http://www.cnblogs.com/yukaizhao/
-商业或公开发布请联系：yukaizhao@gmail.com
+鍟嗕笟鎴栧叕寮�鍙戝竷璇疯仈绯伙細yukaizhao@gmail.com
 */
 /*
-options:{font:'11px 宋体',color:black,region:{x:5,y:130,width:180,height:20}}
+options:{font:'11px 瀹嬩綋',color:black,region:{x:5,y:130,width:180,height:20}}
 */
 function xAxis(options){
   this.options = options;

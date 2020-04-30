@@ -1,8 +1,8 @@
 /*
-html5行情图库
+html5琛屾儏鍥惧簱
 author:yukaizhao
 blog:http://www.cnblogs.com/yukaizhao/
-商业或公开发布请联系：yukaizhao@gmail.com
+鍟嗕笟鎴栧叕寮�鍙戝竷璇疯仈绯伙細yukaizhao@gmail.com
 */
 function getCookie( name ) {
 	var start = document.cookie.indexOf( name + "=" );
@@ -16,7 +16,7 @@ function getCookie( name ) {
 	return unescape( document.cookie.substring( len, end ) );
 }
 var COOKIE_EXPIRES = 0;
-//expires：以天为单位
+//expires锛氫互澶╀负鍗曚綅
 function setCookie( name, value, expires, path, domain, secure) {
 	var today = new Date();
 	today.setTime( today.getTime() );

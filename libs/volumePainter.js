@@ -1,8 +1,8 @@
 /*
-html5行情图库
+html5琛屾儏鍥惧簱
 author:yukaizhao
 blog:http://www.cnblogs.com/yukaizhao/
-商业或公开发布请联系：yukaizhao@gmail.com
+鍟嗕笟鎴栧叕寮�鍙戝竷璇疯仈绯伙細yukaizhao@gmail.com
 */
 /*options like:
 {
@@ -36,7 +36,7 @@ volumePainter.prototype = {
         var options = this.options;
         var region = options.region;
         ctx.save();
-        //转换坐标
+        //杞崲鍧愭爣
         var maxVolume = 0;
         this.data.items.each(function (item) {
             maxVolume = Math.max(maxVolume, item.volume);

@@ -1,8 +1,8 @@
 /*
-html5ĞĞÇéÍ¼¿â
+html5è¡Œæƒ…å›¾åº“
 author:yukaizhao
 blog:http://www.cnblogs.com/yukaizhao/
-ÉÌÒµ»ò¹«¿ª·¢²¼ÇëÁªÏµ£ºyukaizhao@gmail.com
+å•†ä¸šæˆ–å…¬å¼€å‘å¸ƒè¯·è”ç³»ï¼šyukaizhao@gmail.com
 */
   function controller(canvasId, options) {
       this.canvas = $id(canvasId);
@@ -42,7 +42,7 @@ blog:http://www.cnblogs.com/yukaizhao/
           }
 
           //setDebugMsg(leftBarPosition, 'Left');
-          // »­Ïß·½Ê½»­³öÀ´µÄÏßÌ«´ÖÁË
+          // ç”»çº¿æ–¹å¼ç”»å‡ºæ¥çš„çº¿å¤ªç²—äº†
           ctx.lineWidth = 1;
           ctx.strokeStyle = region.borderColor;
           ctx.beginPath();
@@ -80,7 +80,7 @@ blog:http://www.cnblogs.com/yukaizhao/
           ctx.fill();
           ctx.globalAlpha = 1;
 
-          //»­×ó²àĞ¡¾ØĞÎ¿ò
+          //ç”»å·¦ä¾§å°çŸ©å½¢æ¡†
           ctx.strokeStyle = bar.borderColor;
           ctx.fillStyle = bar.fillColor;
           ctx.beginPath();
@@ -90,7 +90,7 @@ blog:http://www.cnblogs.com/yukaizhao/
           ctx.closePath();
           ctx.stroke();
           ctx.fill();
-          //»­ÓÒ²àĞ¡¾ØĞÎ
+          //ç”»å³ä¾§å°çŸ©å½¢
           ctx.beginPath();
           var rightBarRegion = { x: region.x + rightBarPosition - bar.width / 2, y: region.y + region.height / 2 - bar.height / 2, width: bar.width, height: bar.height };
           ctx.rect(rightBarRegion.x, rightBarRegion.y, rightBarRegion.width, rightBarRegion.height);

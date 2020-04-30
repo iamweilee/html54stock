@@ -1,8 +1,8 @@
 /*
-html5ĞĞÇéÍ¼¿â
+html5è¡Œæƒ…å›¾åº“
 author:yukaizhao
 blog:http://www.cnblogs.com/yukaizhao/
-ÉÌÒµ»ò¹«¿ª·¢²¼ÇëÁªÏµ£ºyukaizhao@gmail.com
+å•†ä¸šæˆ–å…¬å¼€å‘å¸ƒè¯·è”ç³»ï¼šyukaizhao@gmail.com
 */
 (function () {
     /*if (!Event.hasOwnProperty("fromElement") && Event.prototype.__defineGetter__) {
@@ -60,11 +60,11 @@ blog:http://www.cnblogs.com/yukaizhao/
             var result;
             var yi = val / 100000000;
             if (yi > 1) {
-                result = yi.toFixed(2) + 'ÒÚ';
+                result = yi.toFixed(2) + 'äº¿';
             } else {
                 var wan = val / 10000;
                 if (wan > 1)
-                    result = wan.toFixed() + 'Íò';
+                    result = wan.toFixed() + 'ä¸‡';
                 else
                     result = val;
             }
@@ -78,7 +78,7 @@ blog:http://www.cnblogs.com/yukaizhao/
             }
             var pageCoord = getPageCoord(target);
             var eventCoord =
-            {     //¼ÆËãÊó±êÎ»ÖÃ£¨´¥·¢ÔªËØÓë´°¿ÚµÄ¾àÀë£©
+            {     //è®¡ç®—é¼ æ ‡ä½ç½®ï¼ˆè§¦å‘å…ƒç´ ä¸çª—å£çš„è·ç¦»ï¼‰
                 x: window.pageXOffset + e.clientX,
                 y: window.pageYOffset + e.clientY
             };
@@ -91,7 +91,7 @@ blog:http://www.cnblogs.com/yukaizhao/
             //e.offsetY = offset.offsetY;
             return offset;
         },
-        getPageCoord: function (element)    //¼ÆËã´Ó´¥·¢µ½root¼äËùÓĞÔªËØµÄoffsetLeftÖµÖ®ºÍ¡£
+        getPageCoord: function (element)    //è®¡ç®—ä»è§¦å‘åˆ°rooté—´æ‰€æœ‰å…ƒç´ çš„offsetLeftå€¼ä¹‹å’Œã€‚
         {
             var coord = { x: 0, y: 0 };
             while (element) {

@@ -1,0 +1,33 @@
+# language: python
+# sudo: required
+# before_install: sudo pip install foo
+# script: py.test
+
+
+language: node_js
+node_js:
+  - "node"
+branches:
+  only:
+    - master
+# install默认值：npm install
+install: true
+# script默认值：npm test
+script:
+  - node_modules/.bin/rollup -c ./config/rollup.config.js
+
+# script 字段
+# script字段用来指定构建或测试脚本。
+# script: bundle exec thor build
+# 如果有多个脚本，可以写成下面的形式。
+# script:
+#   - command1
+#   - command2
+# 注意，script与install不一样，如果command1失败，command2会继续执行。但是，整个构建阶段的状态是失败。
+
+# 如果command2只有在command1成功后才能执行，就要写成下面这样。
+
+# script: command1 && command2
+
+
+# travis教程 http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html

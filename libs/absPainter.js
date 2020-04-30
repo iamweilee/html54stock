@@ -1,12 +1,12 @@
 /*
-html5ĞĞÇéÍ¼¿â
+html5è¡Œæƒ…å›¾åº“
 author:yukaizhao
 blog:http://www.cnblogs.com/yukaizhao/
-ÉÌÒµ»ò¹«¿ª·¢²¼ÇëÁªÏµ£ºyukaizhao@gmail.com
+å•†ä¸šæˆ–å…¬å¼€å‘å¸ƒè¯·è”ç³»ï¼šyukaizhao@gmail.com
 */
 /*
 canvasId:canvasId
-paintImplement: ¸ºÔğ¸æËßpainter¸ÃÈçºÎ»­Í¼
+paintImplement: è´Ÿè´£å‘Šè¯‰painterè¯¥å¦‚ä½•ç”»å›¾
 {
 getX:function(i){},
 getY:function(i){},
@@ -14,7 +14,7 @@ start:function(){},
 paintItem:function(x,y,i){},
 end:function(){},
 }
-data: »­Í¼Òª±íÏÖµÄÊı¾İ
+data: ç”»å›¾è¦è¡¨ç°çš„æ•°æ®
 */
 var dashSize = 2;
 
